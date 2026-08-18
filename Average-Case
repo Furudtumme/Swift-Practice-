@@ -1,0 +1,37 @@
+var numbers = [22, 27, 16, 3, 18, 6]
+let target = 18
+
+// 1. ADIM: Diziyi Sıralama (Insertion Sort)
+for i in 1..<numbers.count {
+    let key = numbers[i]
+    var j = i - 1
+    
+    // key'den büyük sayıları bir sağa kaydır
+    while j >= 0 && numbers[j] > key {
+        numbers[j + 1] = numbers[j]
+        j -= 1
+    }
+    
+    // key'i boşalan doğru yere koy
+    numbers[j + 1] = key
+}
+
+print("Sıralı Dizi: \(numbers)") // [3, 6, 16, 18, 22, 27]
+
+// 2. ADIM: 18 Sayısını Bulma
+var foundIndex: Int? = nil
+
+for i in 0..<numbers.count {
+    if numbers[i] == target {
+        foundIndex = i
+        break // Bulduğumuz an döngüden çıkıyoruz
+    }
+}
+
+// 3. ADIM: Sonucu Yazdırma
+if let index = foundIndex {
+    print("\(target) sayısı dizinin \(index). indeksinde bulundu.")
+} else {
+    print("\(target) sayısı bulunamadı.")
+}
+
