@@ -1,0 +1,33 @@
++-------------------------------------------------------+
+|                   /Animal/ (Abstract)                 |
++-------------------------------------------------------+
+| - speciesName: String                                 |
+| - weight: double                                      |
+| - age: int                                            |
++-------------------------------------------------------+
+| + Animal(speciesName: String, weight: double, age: int)|
+| + getSpeciesName(): String                            |
+| + getWeight(): double                                 |
+| + getAge(): int                                       |
+| + /getDosage()/: String                               |
+| + /getFeedSchedule()/: String                         |
++-------------------------------------------------------+
+                           ^
+                           | (Extends / Inheritance)
+        +------------------+------------------+
+        |                                     |
++---------------+                     +---------------+
+|    Equidae    |                     |    Felidae    |
++---------------+                     +---------------+
+| + getDosage() |                     | + getDosage() |
+| + getFeedSchedule()                 | + getFeedSchedule()
++---------------+                     +---------------+
+        |
+        +------------------+
+                           |
+                   +---------------+
+                   |   Rodentia    |
+                   +---------------+
+                   | + getDosage() |
+                   | + getFeedSchedule()
+                   +---------------+
